@@ -1,0 +1,265 @@
+﻿  dllmain.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\ue.h(387,47): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Abilities.h(24,51): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Abilities.h(24,134): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Abilities.h(60,54): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Abilities.h(70,80): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Abilities.h(72,93): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(18,51): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(20,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(68,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(70,65): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(77,52): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(79,51): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(81,61): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(93,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(95,52): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(96,56): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(98,64): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(101,98): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(102,103): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(112,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(114,52): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(115,98): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(116,103): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(126,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(128,52): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(129,98): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(130,103): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(140,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(141,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(150,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(151,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Looting.h(33,43): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Looting.h(609,74): warning C4267: 'argument': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(28,51): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(29,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(187,50): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(187,166): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(189,92): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(190,50): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(192,120): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(234,192): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(240,112): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(261,50): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Bots.h(262,84): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Quests.h(9,39): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Quests.h(12,46): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(73,66): warning C4267: 'argument': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(236,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(460,25): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(578,37): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(604,71): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(607,71): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(608,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(610,130): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(610,207): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(611,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(613,97): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(614,102): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(643,13): warning C4101: 'v17': unreferenced local variable
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(18,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(23,96): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(32,23): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(37,85): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(39,102): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(106,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(107,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(107,56): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(108,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(108,56): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(169,36): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(171,45): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(171,83): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(270,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(302,49): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(303,46): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(327,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(345,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(363,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(382,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(421,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(422,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(457,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(459,120): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(461,56): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(463,95): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(543,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(633,62): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(633,188): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(633,314): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(633,436): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(633,560): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(635,104): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(703,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(754,99): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(757,39): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(779,63): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PC.h(875,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Floorloot.h(13,21): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Floorloot.h(23,21): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Vehicles.h(14,77): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Vehicles.h(27,24): warning C4305: '/=': truncation from 'double' to 'float'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Vehicles.h(29,24): warning C4305: '/=': truncation from 'double' to 'float'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(31,96): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(179,81): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(229,59): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(256,157): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(259,52): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(268,147): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(271,42): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(303,76): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(330,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(391,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(391,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\GameMode.h(393,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(32,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(45,66): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(76,25): warning C4244: '=': conversion from 'float' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(82,138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(86,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Pawn.h(91,137): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PlayerState.h(18,36): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PlayerState.h(20,45): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\PlayerState.h(20,83): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(29,23): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(30,23): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(30,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(31,23): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(31,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(73,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(74,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(75,24): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SpyGames.h(75,56): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\dllmain.cpp(33,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\dllmain.cpp(89,54): warning C4267: 'argument': conversion from 'size_t' to 'const int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\dllmain.cpp(98,54): warning C4267: 'argument': conversion from 'size_t' to 'const int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\dllmain.cpp(107,54): warning C4267: 'argument': conversion from 'size_t' to 'const int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(161,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\Inventory.h(162,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  AIModule_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  Basic.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  CoreUObject_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  EasyAntiCheatCommon_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  Engine_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  FortniteGame_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  GameplayAbilities_functions.cpp
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
+C:\Users\Omar\Desktop\Eon-Gameserver-main\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\Omar\Desktop\Eon-Gameserver-main\misc.h(285): warning C4715: 'GetZoneStartDuration': not all control paths return a value
+  All 2306 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GamSerbir.vcxproj -> C:\Users\Omar\Desktop\Eon-Gameserver-main\x64\Release\GamSerbir.dll

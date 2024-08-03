@@ -1,4 +1,4 @@
-# Ero-gameserver
-Ero gameserver is a gameserver for s12.41 based on eon
+# Eon-Gameserver
+Fuck you Eon.<br><br>
 
-Ero made eon 1:1 to the real experince
+<img src="https://github.com/hereswhisper/Eon-Gameserver/assets/123034075/c173e292-1e6c-4ee4-ad6a-0b8106d13ff0" />
