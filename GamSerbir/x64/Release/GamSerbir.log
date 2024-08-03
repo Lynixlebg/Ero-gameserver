@@ -43,8 +43,8 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(140,55): warning C4267
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(141,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(150,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(151,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\Looting.h(33,43): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\Looting.h(609,74): warning C4267: 'argument': conversion from 'size_t' to 'int32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\Looting.h(35,43): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\Looting.h(607,74): warning C4267: 'argument': conversion from 'size_t' to 'int32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Bots.h(28,51): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Bots.h(29,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Bots.h(187,50): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
@@ -153,8 +153,8 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(162,60): warning C4267
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  6 of 2308 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+  159 of 2448 functions ( 6.5%) were compiled, the rest were copied from previous compilation.
+    140 functions were new in current compilation
+    207 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GamSerbir.vcxproj -> C:\Users\Omar\Documents\GitHub\Ero-gameserver\x64\Release\GamSerbir.dll
