@@ -357,6 +357,9 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 		}
 	}
 
+	static auto OverrideBattleBusSkin = StaticFindObject<UAthenaBattleBusItemDefinition>("/Game/Athena/Items/Cosmetics/BattleBuses/BBID_DonutBus.BBID_DonutBus");
+	GetGameState()->DefaultBattleBus = OverrideBattleBusSkin;
+
 	if (GetGameState()->PlayersLeft > 0)
 	{
 		return true;

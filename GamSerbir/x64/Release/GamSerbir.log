@@ -123,9 +123,9 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(268,147): warning C4267
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(271,42): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(303,76): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(330,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(391,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(391,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(393,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(394,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(394,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(396,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(32,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(45,66): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(76,25): warning C4244: '=': conversion from 'float' to 'int32', possible loss of data
@@ -151,116 +151,10 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\dllmain.cpp(107,54): warning C4267
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(161,55): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(162,60): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  AIModule_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  Basic.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  CoreUObject_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  EasyAntiCheatCommon_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  Engine_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  FortniteGame_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  GameplayAbilities_functions.cpp
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Basic.hpp(171,31): warning C4267: '=': conversion from 'size_t' to 'int32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1138,2): warning C4369: 'SDK::EVoiceSampleRate::Low16000Hz':  enumerator value '16000' cannot be represented as 'unsigned char', value is '16000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1139,2): warning C4369: 'SDK::EVoiceSampleRate::Normal24000Hz':  enumerator value '24000' cannot be represented as 'unsigned char', value is '24000'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(1140,2): warning C4369: 'SDK::EVoiceSampleRate::EVoiceSampleRate_MAX':  enumerator value '24001' cannot be represented as 'unsigned char', value is '24001'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\Engine_structs.hpp(3615,2): warning C4369: 'SDK::ESoundWaveLoadingBehavior::ESoundWaveLoadingBehavior_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(3441,2): warning C4369: 'SDK::ELootElementType::ELootElementType_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4309: 'initializing': truncation of constant value
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\SDK\FortniteGame_structs.hpp(6005,2): warning C4369: 'SDK::EFortMinigameClassSlot::EFortMinigameClassSlot_MAX':  enumerator value '256' cannot be represented as 'unsigned char', value is '256'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\misc.h(285): warning C4715: 'GetZoneStartDuration': not all control paths return a value
-  2285 of 2306 functions (99.1%) were compiled, the rest were copied from previous compilation.
-    69 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  6 of 2308 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GamSerbir.vcxproj -> C:\Users\Omar\Documents\GitHub\Ero-gameserver\x64\Release\GamSerbir.dll
