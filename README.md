@@ -7,11 +7,17 @@ Ero gameserver is some what of a rewrite of Eon gameserver thats fixes all the b
 
 Every thing that fortnite had at that time 1:1 proper
 
+proper looting and correct lootpool
+
+Deadpool bus
+
+removed vaulted vehicles from spawning
+
 ## Installation
 
 1. Clone this repository or download it
-2. Build the project using your preferred build tools. (Use Visual Studio 2022)
-3. Run the server using the .
+2. Build the project using Visual Studio 2022
+3. Run the server using [FN.AutoHost](https://github.com/Twin1dev/FN.AutoHost) made by Twin1dev .
 ## Contributing
 
 Contributions are welcome! Feel free to create pull requests or report issues on the GitHub repository.
