@@ -321,6 +321,39 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 			}
 		}
 
+		TArray<AActor*> QuadcrasherArray;
+
+		GetStatics()->GetAllActorsOfClass(GetWorld(), UObject::FindObject<UClass>("BlueprintGeneratedClass AntelopeVehicle.AntelopeVehicle_C"), &QuadcrasherArray);
+
+		for (size_t i = 0; i < QuadcrasherArray.Num(); i++)
+		{
+			QuadcrasherArray[i]->K2_DestroyActor();
+		}
+
+		Log("Destroyed Quadcrasher");
+
+		TArray<AActor*> ShoppingCartsArray;
+
+		GetStatics()->GetAllActorsOfClass(GetWorld(), UObject::FindObject<UClass>("BlueprintGeneratedClass ShoppingCartVehicleSK.ShoppingCartVehicleSK_C"), &ShoppingCartsArray);
+
+		for (size_t i = 0; i < ShoppingCartsArray.Num(); i++)
+		{
+			ShoppingCartsArray[i]->K2_DestroyActor();
+		}
+
+		Log("Destroyed Shoppingcarts");
+
+		TArray<AActor*> GolfCartsArray;
+
+		GetStatics()->GetAllActorsOfClass(GetWorld(), UObject::FindObject<UClass>("BlueprintGeneratedClass GolfCartVehicleSK.GolfCartVehicleSK_C"), &GolfCartsArray);
+
+		for (size_t i = 0; i < GolfCartsArray.Num(); i++)
+		{
+			GolfCartsArray[i]->K2_DestroyActor();
+		}
+
+		Log("Destroyed Golf carts");
+
 		TArray<AActor*> VendingMachinesArray;
 
 		GetStatics()->GetAllActorsOfClass(GetWorld(), UObject::FindObject<UClass>("BlueprintGeneratedClass B_Athena_VendingMachine.B_Athena_VendingMachine_C"), &VendingMachinesArray);

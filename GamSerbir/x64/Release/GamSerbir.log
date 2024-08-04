@@ -122,10 +122,13 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(259,52): warning C4267:
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(268,147): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(271,42): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(303,76): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(330,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(394,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(394,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
-C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(396,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(330,21): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(341,23): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(352,19): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(363,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(427,25): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(427,48): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
+C:\Users\Omar\Documents\GitHub\Ero-gameserver\GameMode.h(429,22): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(32,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(45,66): warning C4267: 'argument': conversion from 'size_t' to 'uint32', possible loss of data
 C:\Users\Omar\Documents\GitHub\Ero-gameserver\Pawn.h(76,25): warning C4244: '=': conversion from 'float' to 'int32', possible loss of data
@@ -153,8 +156,8 @@ C:\Users\Omar\Documents\GitHub\Ero-gameserver\Inventory.h(162,60): warning C4267
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  159 of 2448 functions ( 6.5%) were compiled, the rest were copied from previous compilation.
-    140 functions were new in current compilation
-    207 functions had inline decision re-evaluated but remain unchanged
+  5 of 2448 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    27 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GamSerbir.vcxproj -> C:\Users\Omar\Documents\GitHub\Ero-gameserver\x64\Release\GamSerbir.dll
