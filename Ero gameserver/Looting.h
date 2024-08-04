@@ -144,27 +144,6 @@ void InitLooting()
 	LootForTiers["Airdrop"].push_back(Row1);//burst gold
 	//End Burst Rifle
 
-	//AK
-
-	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_VR_Ore_T03.WID_Assault_Heavy_Athena_VR_Ore_T03");
-	Row1.DropCount = 1;
-	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.03f;
-	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
-	LootForTiers["Airdrop"].push_back(Row1);//heavy purple
-
-	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_SR_Ore_T03.WID_Assault_Heavy_Athena_SR_Ore_T03");
-	Row1.DropCount = 1;
-	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.01f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
-	LootForTiers["Airdrop"].push_back(Row1); //heavy gold
-	//End AK
 
 	//Pump
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_Common.WID_Shotgun_Standard_Athena_Common");
@@ -325,7 +304,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_VR_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_VR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.7f;
+	Row1.Weight = 0.4f;
 	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
@@ -335,7 +314,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_SR_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_SR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.05f;
+	Row1.Weight = 0.02f;
 	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
@@ -347,7 +326,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Heavy_Athena_VR_Ore_T03.WID_Sniper_Heavy_Athena_VR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.07f;
+	Row1.Weight = 0.04f;
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -358,7 +337,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_VR_Ore_T03.WID_Launcher_Rocket_Athena_VR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.06f;
+	Row1.Weight = 0.05f;
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -367,7 +346,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Launcher_Rocket_Athena_SR_Ore_T03.WID_Launcher_Rocket_Athena_SR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.03f;
+	Row1.Weight = 0.01f;
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
@@ -392,8 +371,7 @@ void InitLooting()
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.25f;
 	LootForTiers["Airdrop"].push_back(Row1);
-	LootForTiers["Loot_AthenaFloorLoot"].push_back(Row1);
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1); //Prox mine
+	LootForTiers["Loot_AthenaFloorLoot"].push_back(Row1); //Prox mine
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/Shields/Athena_Shields.Athena_Shields");
 	Row1.DropCount = 1;
