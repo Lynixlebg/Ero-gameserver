@@ -13,7 +13,7 @@ float GetMaxStackSize(UFortItemDefinition* Def)
 
 void ModifyEntry(AFortPlayerControllerAthena* PC, FFortItemEntry& Entry)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ItemInstances[i]->ItemEntry.ItemGuid == Entry.ItemGuid)
 		{
@@ -24,7 +24,7 @@ void ModifyEntry(AFortPlayerControllerAthena* PC, FFortItemEntry& Entry)
 }
 
 void UpdateInventory(AFortPlayerControllerAthena* PC, FFortItemEntry* Entry)
-{	
+{
 	PC->WorldInventory->bRequiresLocalUpdate = true;
 	PC->WorldInventory->HandleInventoryLocalUpdate();
 
@@ -52,10 +52,10 @@ void GiveItem(AFortPlayerControllerAthena* PC, UFortItemDefinition* Def, int Cou
 	UFortWorldItem* Item = (UFortWorldItem*)Def->CreateTemporaryItemInstanceBP(Count, Level);
 	Item->SetOwningControllerForTemporaryItem(PC);
 	Item->ItemEntry.LoadedAmmo = LoadedAmmo;
-	
+
 	PC->WorldInventory->Inventory.ReplicatedEntries.Add(Item->ItemEntry);
 	PC->WorldInventory->Inventory.ItemInstances.Add(Item);
-	
+
 	UpdateInventory(PC, &Item->ItemEntry);
 }
 
@@ -63,7 +63,7 @@ FName PickaxeTagName;
 
 void Remove(AFortPlayerController* PC, FGuid Guid)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Guid)
 		{
@@ -72,7 +72,7 @@ void Remove(AFortPlayerController* PC, FGuid Guid)
 		}
 	}
 
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
 	{
 		if (!PC->WorldInventory->Inventory.ItemInstances[i])
 			continue;
@@ -88,7 +88,7 @@ void Remove(AFortPlayerController* PC, FGuid Guid)
 
 void Remove(AFortPlayerController* PC, UFortItemDefinition* Def, int Count = 1)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition == Def)
 		{
@@ -105,9 +105,28 @@ void Remove(AFortPlayerController* PC, UFortItemDefinition* Def, int Count = 1)
 	}
 }
 
+void Remove(AFortPlayerController* PC, FFortItemEntry* Entry, int Count = 1)
+{
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	{
+		if (&PC->WorldInventory->Inventory.ReplicatedEntries[i] == Entry)
+		{
+			PC->WorldInventory->Inventory.ReplicatedEntries[i].Count -= Count;
+			if (PC->WorldInventory->Inventory.ReplicatedEntries[i].Count <= 0)
+			{
+				Remove(PC, PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid);
+				break;
+			}
+			ModifyEntry((AFortPlayerControllerAthena*)PC, PC->WorldInventory->Inventory.ReplicatedEntries[i]);
+			UpdateInventory((AFortPlayerControllerAthena*)PC, &PC->WorldInventory->Inventory.ReplicatedEntries[i]);
+			break;
+		}
+	}
+}
+
 void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Weapon->ItemEntryGuid)
 		{
@@ -121,7 +140,7 @@ void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon)
 
 void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon, int AmountToAdd)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Weapon->ItemEntryGuid)
 		{
@@ -135,7 +154,7 @@ void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon, int Amount
 
 FFortItemEntry* FindEntry(AFortPlayerController* PC, UFortItemDefinition* Def)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition == Def)
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];
@@ -145,7 +164,7 @@ FFortItemEntry* FindEntry(AFortPlayerController* PC, UFortItemDefinition* Def)
 
 FFortItemEntry* FindEntry(AFortPlayerController* PC, FGuid& Guid)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Guid)
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];
@@ -156,7 +175,7 @@ FFortItemEntry* FindEntry(AFortPlayerController* PC, FGuid& Guid)
 template<typename T>
 FFortItemEntry* FindEntry(AFortPlayerController* PC)
 {
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition->IsA(T::StaticClass()))
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];

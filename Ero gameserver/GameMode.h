@@ -330,7 +330,7 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 			QuadcrasherArray[i]->K2_DestroyActor();
 		}
 
-		Log("Destroyed Quadcrasher");
+		//Log("Destroyed Quadcrasher");
 
 		TArray<AActor*> ShoppingCartsArray;
 
@@ -341,7 +341,7 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 			ShoppingCartsArray[i]->K2_DestroyActor();
 		}
 
-		Log("Destroyed Shoppingcarts");
+		//Log("Destroyed Shoppingcarts");
 
 		TArray<AActor*> GolfCartsArray;
 
@@ -352,7 +352,7 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 			GolfCartsArray[i]->K2_DestroyActor();
 		}
 
-		Log("Destroyed Golf carts");
+		//Log("Destroyed Golf carts");
 
 		TArray<AActor*> VendingMachinesArray;
 
