@@ -16,8 +16,9 @@ removed vaulted vehicles from spawning
 ## Installation
 
 1. Clone this repository or download it
-2. Build the project using Visual Studio 2022
-3. Run the server using [FN.AutoHost](https://github.com/Twin1dev/FN.AutoHost) made by Twin1dev .
+2. you extract the sdk
+3. Build the project using Visual Studio 2022
+4. Run the server using [FN.AutoHost](https://github.com/Twin1dev/FN.AutoHost) made by Twin1dev .
 ## Contributing
 
 Contributions are welcome! Feel free to create pull requests or report issues on the GitHub repository.
