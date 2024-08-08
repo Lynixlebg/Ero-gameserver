@@ -13,7 +13,7 @@
 using namespace std;
 
 static bool bMcp = true;
-static bool bUsingApi = false;
+static bool bUsingApi = true;
 static bool bUsingWebhook = false;
 
 
@@ -29,10 +29,9 @@ static int PlayersOnBus = 0;
 
 map<string, int> VbucksToGive{};
 
-#define API_URL "http://132.145.78.35:5555/"
-#define MMS_URL "http://135.148.28.59/"
-static string VPS_IP = "135.148.28.59"; // don't set this, you are weird
-#define WEBHOOK_URL "https://discord.com/api/webhooks/1158856674954719334/TOrefOyKtNnFI43A21begGxCLjD4XllVyrEmjKpKqayv7PYO-hTmYBZc4Nt54HIXp_HU"
+#define API_URL "http://127.0.0.1:6666/"
+#define MMS_URL "http://127.0.0.1/"
+static string VPS_IP = "127.0.0.1"; // don't set this, you are weird
 
 static size_t WriteCallback(char* contents, size_t size, size_t nmemb, void* RES)
 {
@@ -277,44 +276,6 @@ namespace EonMMSAPI {
 		
 }
 
-	namespace Discord {
-		class DiscordWebhook {
-		public:
-			DiscordWebhook(const char* webhook) {
-				curl_global_init(CURL_GLOBAL_ALL);
-				curl = curl_easy_init();
-
-				if (curl) {
-					curl_easy_setopt(curl, CURLOPT_URL, webhook);
-					curl_slist* headers = curl_slist_append(NULL, "Content-Type: application/json");
-					curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-				}
-				else {
-					printf("Failed To Send! Will Return as a NULL POINTER");
-				}
-			}
-
-			~DiscordWebhook() {
-				curl_global_cleanup();
-				curl_easy_cleanup(curl);
-			}
-
-			inline bool send_message(const std::string& message) {
-				if (!bUsingWebhook)
-					return false;
-				std::string json = "{\"content\": \"" + message + +"\"}";
-				curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json.c_str());
-
-				return curl_easy_perform(curl) == CURLE_OK;
-			}
-		private:
-			CURL* curl;
-		};
-
-
-		static DiscordWebhook Servers(WEBHOOK_URL);
-
-	}
 
 	namespace EonApi
 	{
@@ -329,7 +290,6 @@ namespace EonMMSAPI {
 
 		void MarkServerOnline(string REGION, string PlayerCap, string Port, string Session, string Playlist, string CustomCode)
 		{
-			cout << Discord::Servers.send_message(Region + " is now up!") << endl;
 			if (StaticAPI)
 			{
 				std::string Endpoint = std::format("fortnite/api/eon/add/{}/{}/{}/{}/{}/{}", Session, REGION, Port, Playlist, PlayerCap, CustomCode);
@@ -343,7 +303,6 @@ namespace EonMMSAPI {
 		// kill yourself you stupid crappy visual studio wannabe.
 		void LockGameSession(string Region, string Name)
 		{
-			Discord::Servers.send_message(Region + " match started!");
 			if (StaticAPI)
 			{
 				std::string Enp = std::format("fortnite/api/eon/lock/{}/{}", Region, Name);
@@ -356,7 +315,6 @@ namespace EonMMSAPI {
 
 		void RemoveSession(string Region, string Name)
 		{
-			Discord::Servers.send_message(Region + " server is restarting...");
 			if (StaticAPI)
 			{
 				std::string Endp = std::format("fortnite/api/eon/remove/{}/{}", Region, Name);

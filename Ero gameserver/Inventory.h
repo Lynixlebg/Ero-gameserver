@@ -1,6 +1,8 @@
 #pragma once
 #include "ue.h"
 
+
+
 float GetMaxStackSize(UFortItemDefinition* Def)
 {
 	if (!Def->MaxStackSize.Curve.CurveTable)
@@ -13,7 +15,7 @@ float GetMaxStackSize(UFortItemDefinition* Def)
 
 void ModifyEntry(AFortPlayerControllerAthena* PC, FFortItemEntry& Entry)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ItemInstances[i]->ItemEntry.ItemGuid == Entry.ItemGuid)
 		{
@@ -63,7 +65,7 @@ FName PickaxeTagName;
 
 void Remove(AFortPlayerController* PC, FGuid Guid)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Guid)
 		{
@@ -72,7 +74,7 @@ void Remove(AFortPlayerController* PC, FGuid Guid)
 		}
 	}
 
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ItemInstances.Num(); i++)
 	{
 		if (!PC->WorldInventory->Inventory.ItemInstances[i])
 			continue;
@@ -88,7 +90,7 @@ void Remove(AFortPlayerController* PC, FGuid Guid)
 
 void Remove(AFortPlayerController* PC, UFortItemDefinition* Def, int Count = 1)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition == Def)
 		{
@@ -107,7 +109,7 @@ void Remove(AFortPlayerController* PC, UFortItemDefinition* Def, int Count = 1)
 
 void Remove(AFortPlayerController* PC, FFortItemEntry* Entry, int Count = 1)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (&PC->WorldInventory->Inventory.ReplicatedEntries[i] == Entry)
 		{
@@ -126,7 +128,7 @@ void Remove(AFortPlayerController* PC, FFortItemEntry* Entry, int Count = 1)
 
 void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Weapon->ItemEntryGuid)
 		{
@@ -140,7 +142,7 @@ void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon)
 
 void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon, int AmountToAdd)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Weapon->ItemEntryGuid)
 		{
@@ -154,7 +156,7 @@ void UpdateLoadedAmmo(AFortPlayerController* PC, AFortWeapon* Weapon, int Amount
 
 FFortItemEntry* FindEntry(AFortPlayerController* PC, UFortItemDefinition* Def)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition == Def)
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];
@@ -164,7 +166,7 @@ FFortItemEntry* FindEntry(AFortPlayerController* PC, UFortItemDefinition* Def)
 
 FFortItemEntry* FindEntry(AFortPlayerController* PC, FGuid& Guid)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Guid)
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];
@@ -175,10 +177,11 @@ FFortItemEntry* FindEntry(AFortPlayerController* PC, FGuid& Guid)
 template<typename T>
 FFortItemEntry* FindEntry(AFortPlayerController* PC)
 {
-	for (int32 /*size_t*/ i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition->IsA(T::StaticClass()))
 			return &PC->WorldInventory->Inventory.ReplicatedEntries[i];
 	}
 	return nullptr;
 }
+

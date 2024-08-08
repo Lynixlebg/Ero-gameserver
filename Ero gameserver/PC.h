@@ -180,13 +180,7 @@ void ServerLoadingScreenDropped(AFortPlayerControllerAthena* PC)
 
 	FFortAthenaLoadout& CosmeticLoadoutPC = *(FFortAthenaLoadout*)(__int64(PC) + 0x1810);
 
-	if (bUsingApi) {
-
-		if (!CosmeticLoadoutPC.Pickaxe)
-		{
-			////GameSession_KickPlayer(Cast<AFortGameSession>(GetGameMode()->GameSession), PC);
-			//return;
-		}
+	if (bMcp) {
 
 		GiveItem(PC, CosmeticLoadoutPC.Pickaxe->WeaponDefinition);
 
