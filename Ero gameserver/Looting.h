@@ -622,10 +622,9 @@ bool VectorContains(T Item, std::vector<T>& Vector)
 	return false;
 }
 
-// Function to get a random item from a loot tier
-ItemRow* GetRandomItem(std::string LootTier, EFortItemType ItemType = EFortItemType::EFortItemType_MAX, bool EnableDefs = false)
+ItemRow* GetRandomItem(string LootTier, EFortItemType ItemType = EFortItemType::EFortItemType_MAX, bool EnableDefs = true)
 {
-	static std::vector<UFortItemDefinition*> LastDefs{};
+	static vector<UFortItemDefinition*> LastDefs{};
 
 	if (!LootForTiers.contains(LootTier))
 		return nullptr;
@@ -634,25 +633,35 @@ ItemRow* GetRandomItem(std::string LootTier, EFortItemType ItemType = EFortItemT
 
 	if (Vector.size() <= 0)
 		return nullptr;
+	static auto rng = default_random_engine((unsigned int)time(0));
+	shuffle(Vector.begin(), Vector.end(), rng);
 
-	static std::default_random_engine rng((unsigned int)time(0));
-	std::shuffle(Vector.begin(), Vector.end(), rng);
+	ItemRow* Ret = &Vector[GetMath()->RandomInteger64InRange(0, Vector.size() - 1)];
 
-	ItemRow* Ret = &Vector[GetMath()->RandomIntegerInRange(0, Vector.size() - 1)];
+	if (!Ret->Def) {
+		return GetRandomItem(LootTier, ItemType, EnableDefs);
+	}
 
 	if (EnableDefs)
 	{
 		bool contains = VectorContains<UFortItemDefinition*>(Ret->Def, LastDefs);
 
 		if (contains)
-			return GetRandomItem(LootTier, ItemType);
+			return GetRandomItem(LootTier, ItemType, EnableDefs);
+	}
+	if (ItemType == EFortItemType::WeaponRanged && (Ret->Def->GetName().starts_with("Athena_") || Ret->Def->GetName() == "WID_Athena_PurpleMouse" || Ret->Def->GetName() == "WID_Hook_Gun_VR_Ore_T03")) 
+	{
+		return GetRandomItem(LootTier, ItemType, EnableDefs);
+	}
+	else if (ItemType == EFortItemType::Consumable && (Ret->Def->GetName().starts_with("Athena_") || Ret->Def->GetName() == "WID_Athena_PurpleMouse" || Ret->Def->GetName() == "WID_Hook_Gun_VR_Ore_T03")) 
+	{
+		return Ret;
 	}
 
 	if (ItemType != EFortItemType::EFortItemType_MAX && Ret->Def->GetItemType() != ItemType)
-		return GetRandomItem(LootTier, ItemType);
-
+		return GetRandomItem(LootTier, ItemType, EnableDefs);
 	if (!GetMath()->RandomBoolWithWeight(Ret->Weight))
-		return GetRandomItem(LootTier, ItemType);
+		return GetRandomItem(LootTier, ItemType, EnableDefs);
 
 	if (EnableDefs)
 	{
