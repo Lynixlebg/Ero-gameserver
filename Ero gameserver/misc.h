@@ -5,6 +5,7 @@
 #include <intrin.h>
 #include "Quests.h"
 
+
 void (*TickFlushOG)(UNetDriver* Driver, float a2);
 void TickFlushHook(UNetDriver* Driver, float a2)
 {
@@ -521,19 +522,51 @@ void ServerAttemptInteract(UFortControllerComponent_Interaction* Comp, AActor* R
     }
     else if (ReceivingActor->IsA(AFortAthenaSupplyDrop::StaticClass()))
     {
-        Log("Supply Drop");
-        ItemRow* Consumable = GetRandomItem("Airdrop", EFortItemType::Consumable);
-        ItemRow* Weapon = GetRandomItem("Airdrop", EFortItemType::WeaponRanged);
+        if (ReceivingActor->GetName().starts_with("AthenaSupplyDrop_Llama_C_")) {
+            ItemRow* Consumable = GetRandomItem("Loot_AthenaLlama", EFortItemType::Consumable);
+            ItemRow* Consumable2 = GetRandomItem("Loot_AthenaLlama", EFortItemType::Consumable);
 
-        static auto WoodDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
-        static auto StoneDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/StoneItemData.StoneItemData");
-        static auto MetalDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/MetalItemData.MetalItemData");
+            static auto Sniper = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsHeavy.AthenaAmmoDataBulletsHeavy");
+            static auto SniperC = 90;
 
-        SpawnPickup(ReceivingActor->K2_GetActorLocation(), Consumable->Def, Consumable->DropCount, Consumable->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
-        SpawnPickup(ReceivingActor->K2_GetActorLocation(), Weapon->Def, Weapon->DropCount, Weapon->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
-        SpawnPickup(ReceivingActor->K2_GetActorLocation(), WoodDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
-        SpawnPickup(ReceivingActor->K2_GetActorLocation(), StoneDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
-        SpawnPickup(ReceivingActor->K2_GetActorLocation(), MetalDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            static auto SMG = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsLight.AthenaAmmoDataBulletsLight");
+            static auto SMGC = 180;
+
+            static auto AR = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataBulletsMedium.AthenaAmmoDataBulletsMedium");
+            static auto ARC = 150;
+
+            static auto Shotgun = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Ammo/AthenaAmmoDataShells.AthenaAmmoDataShells");
+            static auto ShotgunC = 30;
+
+            static auto WoodDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
+            static auto StoneDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/StoneItemData.StoneItemData");
+            static auto MetalDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/MetalItemData.MetalItemData");
+
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Consumable->Def, Consumable->DropCount, Consumable->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Consumable2->Def, Consumable2->DropCount, Consumable2->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), WoodDef, 350, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), StoneDef, 350, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), MetalDef, 350, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Sniper, SniperC, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), SMG, SMGC, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), AR, ARC, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Shotgun, ShotgunC, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+        }
+        else {
+            ItemRow* Consumable = GetRandomItem("Airdrop", EFortItemType::Consumable);
+            ItemRow* Weapon = GetRandomItem("Airdrop", EFortItemType::WeaponRanged);
+
+            static auto WoodDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/WoodItemData.WoodItemData");
+            static auto StoneDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/StoneItemData.StoneItemData");
+            static auto MetalDef = StaticLoadObject<UFortItemDefinition>("/Game/Items/ResourcePickups/MetalItemData.MetalItemData");
+
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Consumable->Def, Consumable->DropCount, Consumable->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), Weapon->Def, Weapon->DropCount, Weapon->LoadedAmmo, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), WoodDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), StoneDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+            SpawnPickup(ReceivingActor->K2_GetActorLocation(), MetalDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+        }
     }
     //else if (ReceivingActor->IsA(AFortAthenaVehicle::StaticClass()))
     //{

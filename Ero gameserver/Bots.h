@@ -30,6 +30,41 @@ public:
 		}
 		return FGuid();
 	}
+	FVector FindllamaSpawn(AFortAthenaMapInfo* MapInfo, FVector Center, float Radius)
+	{
+		static FVector* (*PickSupplyDropLocationOriginal)(AFortAthenaMapInfo * MapInfo, FVector * outLocation, __int64 Center, float Radius) = decltype(PickSupplyDropLocationOriginal)(__int64(GetModuleHandleA(0)) + 0x18848f0);
+
+		if (!PickSupplyDropLocationOriginal)
+			return FVector(0, 0, 0);
+
+
+		FVector Out = FVector(0, 0, 0);
+		auto ahh = PickSupplyDropLocationOriginal(MapInfo, &Out, __int64(&Center), Radius);
+		return Out;
+	}
+	bool spawned = false;
+
+	void Spawnllama() {
+		auto MI = GetGameState()->MapInfo;
+		int numPlayers = GetGameState()->GameMemberInfoArray.Members.Num();
+
+		FFortAthenaAIBotRunTimeCustomizationData runtimeData;
+		runtimeData.CustomSquadId = 3 + numPlayers;
+
+		FRotator RandomYawRotator{};
+		RandomYawRotator.Yaw = (float)rand() * 0.010986663f;
+
+		int Radius = 100000;
+		FVector Location = FindllamaSpawn(MI, FVector(1, 1, 10000), (float)Radius);
+
+		auto Llama = SpawnActor<AFortAthenaSupplyDrop>(MI->LlamaClass.Get(), Location, RandomYawRotator);
+
+		auto GroundLocation = Llama->FindGroundLocationAt(Location);
+
+		Llama->K2_DestroyActor();
+
+		spawned = true;
+	}
 
 	void GiveItem(UFortItemDefinition* Def, int Count = 1)
 	{

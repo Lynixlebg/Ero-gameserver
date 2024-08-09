@@ -160,6 +160,7 @@
     <ClInclude Include="Floorloot.h" />
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="llama.h" />
     <ClInclude Include="Looting.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Pawn.h" />

@@ -348,6 +348,38 @@ void ServerCheat(AFortPlayerControllerAthena* OPC, FString Msg)
 		}
 	}
 
+	if (MsgStr.contains("llama")) {
+		if (!OPC->MyFortPawn) return;
+		string item = SplitString(true, "llama", MsgStr);
+		auto count = stoi(item);
+		if (count > 100) count = 100;
+
+		for (int i = 0; i < count; i++) {
+			FRotator Rotation = {
+				0.0,
+				-179.9999f,
+				0.0
+			};
+
+			auto BT = OPC->GetViewTarget()->K2_GetActorLocation();
+
+			auto RandomSpot = GetMath()->RandomIntegerInRange(200, 200 + (count * 10));
+			if (GetMath()->RandomBool()) {
+				RandomSpot = -RandomSpot;
+			}
+			BT.X += RandomSpot;
+			BT.Y += RandomSpot;
+
+			BT.Z += 2500;
+
+			auto Llama = SpawnActor<AFortAthenaSupplyDrop>(GetGameState()->MapInfo->LlamaClass.Get(), BT, Rotation);
+
+			auto GroundLocation = Llama->FindGroundLocationAt(BT);
+
+			Llama->K2_DestroyActor();
+		}
+	}
+
 	if (MsgStr.contains("tp "))
 	{
 		string username = SplitString(true, "tp ", MsgStr);

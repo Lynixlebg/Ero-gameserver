@@ -85,6 +85,7 @@ bool bArsenal = false;
 bool bStormKing = false;
 bool bSkipAircraft = false;
 bool bSolos = true;
+bool bllamas = true;
 // EXPERIMENTAL, DO NOT USE UNLESS YOU KNOW WHAT YOU ARE DOING
 //bool bNoTeams = true;
 bool bSkipWarmup = false;

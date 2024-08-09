@@ -3,6 +3,7 @@
 #include "Floorloot.h"
 #include "Vehicles.h"
 #include "AntiCheat.h"
+#include "llama.h"
 #include <thread>
 
 bool InitListenFunc(void* Driver, void* World, FURL& url, bool reuse, FString& error)
@@ -369,6 +370,7 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 
 		Log("Finished setting LootTierGroups, freeing array");
 		BuildingContainers.FreeArray();
+
 		
 		//GetGameState()->EventTournamentRound = EEventTournamentRound::Arena;
 		//GetGameState()->OnRep_EventTournamentRound();
@@ -392,6 +394,18 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 
 	static auto OverrideBattleBusSkin = StaticFindObject<UAthenaBattleBusItemDefinition>("/Game/Athena/Items/Cosmetics/BattleBuses/BBID_DonutBus.BBID_DonutBus");
 	GetGameState()->DefaultBattleBus = OverrideBattleBusSkin;
+
+	static bool bSpawnedLlamas = false;
+
+	if (bllamas && !bSpawnedLlamas) {
+		SpawnLlamas();
+		Log("Spawned llamas");
+
+		bSpawnedLlamas = true;
+	}
+	else if (!bllamas) {
+		Log("llamas didnt spwan");
+	}
 
 	if (GetGameState()->PlayersLeft > 0)
 	{

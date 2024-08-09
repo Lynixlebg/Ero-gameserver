@@ -110,5 +110,8 @@
     <ClInclude Include="Quests.h">
       <Filter>Header file\Game</Filter>
     </ClInclude>
+    <ClInclude Include="llama.h">
+      <Filter>Header file\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

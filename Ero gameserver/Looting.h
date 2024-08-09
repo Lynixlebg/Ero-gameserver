@@ -6,6 +6,8 @@
 #include <random>
 #include <unordered_set>
 #include <string>
+ 
+// all of this should be auto wtf was eon thinking (tbh i think its jyzo brain cells here)
 
 struct ItemRow
 {
@@ -143,6 +145,51 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);//burst gold
 	//End Burst Rifle
+
+	//Pistol
+
+	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_SemiAuto_Athena_C_Ore_T02.WID_Pistol_SemiAuto_Athena_C_Ore_T02");
+	Row1.DropCount = 1;
+	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
+	Row1.Weight = 0.21f;
+	LootForTiers["Loot_AthenaFloorLoot_Warmup"].push_back(Row1);
+	LootForTiers["Loot_AthenaFloorLoot"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure"].push_back(Row1); // pistol grey
+
+	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_SemiAuto_Athena_UC_Ore_T03.WID_Pistol_SemiAuto_Athena_UC_Ore_T03");
+	Row1.DropCount = 1;
+	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
+	Row1.Weight = 0.19f;
+	LootForTiers["Loot_AthenaFloorLoot_Warmup"].push_back(Row1);
+	LootForTiers["Loot_AthenaFloorLoot"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure"].push_back(Row1); // pistol green
+
+	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_SemiAuto_Athena_R_Ore_T03.WID_Pistol_SemiAuto_Athena_R_Ore_T03");
+	Row1.DropCount = 1;
+	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
+	Row1.Weight = 0.15f;
+	LootForTiers["Loot_AthenaTreasure"].push_back(Row1); //pistol blue
+
+	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_Standard_Athena_VR.WID_Pistol_Standard_Athena_VR");
+	Row1.DropCount = 1;
+	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
+	Row1.Weight = 0.09f;
+	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Airdrop"].push_back(Row1); //pistol purple
+
+	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Pistol_Standard_Athena_SR.WID_Pistol_Standard_Athena_SR");
+	Row1.DropCount = 1;
+	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
+	Row1.Weight = 0.05f;
+	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
+	LootForTiers["Airdrop"].push_back(Row1); //pistol gold
+	//End Pistol
 
 
 	//Pump
@@ -304,7 +351,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_VR_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_VR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.4f;
+	Row1.Weight = 0.1f;
 	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
@@ -326,7 +373,7 @@ void InitLooting()
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Weapons/WID_Sniper_Heavy_Athena_VR_Ore_T03.WID_Sniper_Heavy_Athena_VR_Ore_T03");
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
-	Row1.Weight = 0.04f;
+	Row1.Weight = 0.03f;
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -363,6 +410,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);    // Grenade
 
@@ -371,6 +419,7 @@ void InitLooting()
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.25f;
 	LootForTiers["Airdrop"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Loot_AthenaFloorLoot"].push_back(Row1); //Prox mine
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/Shields/Athena_Shields.Athena_Shields");
@@ -383,6 +432,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //big pot
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/ShieldSmall/Athena_ShieldSmall.Athena_ShieldSmall");
@@ -395,6 +445,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //minis
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/Bandage/Athena_Bandage.Athena_Bandage");
@@ -407,6 +458,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //bandage
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/Medkit/Athena_Medkit.Athena_Medkit");
@@ -417,12 +469,13 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //medkit
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Gameplay/Lotus/Mustache/AGID_Lotus_Mustache.AGID_Lotus_Mustache");
 	Row1.DropCount = 3;
 	Row1.LoadedAmmo = 0;
-	Row1.Weight = 0.05f;
+	Row1.Weight = 0.09f;
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -437,6 +490,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //c4
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Traps/TID_Floor_Player_Launch_Pad_Athena.TID_Floor_Player_Launch_Pad_Athena");
@@ -447,7 +501,8 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
-	Row1.Weight = 0.15f;
+	Row1.Weight = 0.20f;
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); //launchpad
 
 	Row1.Def = StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/AppleSun/WID_Athena_AppleSun.WID_Athena_AppleSun");
@@ -459,6 +514,7 @@ void InitLooting()
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
+	LootForTiers["Loot_AthenaLlama"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1); // crash pads
 	//End Consumables
 
@@ -643,7 +699,7 @@ char __fastcall SpawnLoot(ABuildingContainer* Object)
 		Flag = EFortPickupSourceTypeFlag::FloorLoot;
 	}
 
-	IsFactionChest = TierGroupStr == "Loot_AthenaTreasure_Blue" || TierGroupStr == "Loot_AthenaTreasure_Red";
+	IsFactionChest = TierGroupStr == "Loot_AthenaTreasure_Blue" || TierGroupStr == "Loot_AthenaTreasure_Red" || TierGroupStr == "Loot_AthenaTreasure_White" ;
 
 	if (TierGroupStr == "Loot_AthenaIceBox")
 	{
