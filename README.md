@@ -13,6 +13,11 @@ Deadpool bus
 
 removed vaulted vehicles from spawning
 
+fixed looting
+
+added loot llamas
+
+
 ## Installation
 
 1. Clone this repository or download it

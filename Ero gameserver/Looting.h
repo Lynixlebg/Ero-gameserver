@@ -92,7 +92,6 @@ void InitLooting()
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.05f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -139,7 +138,6 @@ void InitLooting()
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.05f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -232,7 +230,6 @@ void InitLooting()
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.05f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_White"].push_back(Row1);
@@ -279,7 +276,6 @@ void InitLooting()
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.05f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
@@ -362,7 +358,6 @@ void InitLooting()
 	Row1.DropCount = 1;
 	Row1.LoadedAmmo = GetAmmoForDef((UFortWeaponItemDefinition*)Row1.Def);
 	Row1.Weight = 0.02f;
-	LootForTiers["Loot_AthenaTreasure"].push_back(Row1);
 	LootForTiers["Airdrop"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Blue"].push_back(Row1);
 	LootForTiers["Loot_AthenaTreasure_Red"].push_back(Row1);
@@ -622,7 +617,7 @@ bool VectorContains(T Item, std::vector<T>& Vector)
 	return false;
 }
 
-ItemRow* GetRandomItem(string LootTier, EFortItemType ItemType = EFortItemType::EFortItemType_MAX, bool EnableDefs = true)
+ItemRow* GetRandomItem(string LootTier, EFortItemType ItemType = EFortItemType::EFortItemType_MAX, bool EnableDefs = false)
 {
 	static vector<UFortItemDefinition*> LastDefs{};
 
