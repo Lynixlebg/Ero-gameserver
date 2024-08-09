@@ -437,17 +437,39 @@ APlayerController* SpawnPlayActor(UWorld* World, UPlayer* Player, ENetRole Remot
     return Ret;
 }
 
-__int64 (*OnExplodedOG)(AB_Prj_Athena_Consumable_Thrown_C* a1, unsigned __int64* a2, char* a3);
-__int64 OnExploded(AB_Prj_Athena_Consumable_Thrown_C* a1, unsigned __int64* a2, char* a3)
+__int64 (*OnExplodedOG)(AB_Prj_Athena_Consumable_Thrown_C* Consumable, TArray<class AActor*>& HitActors, TArray<struct FHitResult>& HitResults) = decltype(OnExplodedOG)(__int64(GetModuleHandleA(0)) + 0x3EA2740);
+__int64 OnExploded(AB_Prj_Athena_Consumable_Thrown_C* Consumable, TArray<class AActor*>& HitActors, TArray<struct FHitResult>& HitResults)
 {
-    if (!a1)
-        return 0;
-    auto Def = *(UFortItemDefinition**)(__int64(a1) + 0x888);
+    if (!Consumable)
+        return OnExplodedOG(Consumable, HitActors, HitResults); 
+    if (Consumable->GetName() == "B_Prj_Lotus_Mustache_C") {
+        SpawnPickup(Consumable->K2_GetActorLocation(), StaticLoadObject<UFortItemDefinition>("/Game/Athena/Items/Consumables/Bandage/Athena_Bandage.Athena_Bandage"), 1, 0, EFortPickupSourceTypeFlag::Tossed, EFortPickupSpawnSource::Unset, nullptr, false);
+    }
+    else if (Consumable->GetName() == "B_Prj_Athena_Bucket_Old_C" || Consumable->GetName() == "B_Prj_Athena_Bucket_Nice_C") {
+        auto PC = Consumable->GetOwnerPlayerController();
+        auto Pawn = PC->MyFortPawn;
+        auto Def = *(UFortItemDefinition**)(__int64(Consumable) + 0x888);
+        if (!Def)
+            return OnExplodedOG(Consumable, HitActors, HitResults); 
+
+        AFortPickupAthena* NewPickup = SpawnActor<AFortPickupAthena>(Consumable->K2_GetActorLocation());
+        NewPickup->bRandomRotation = true;
+        NewPickup->PrimaryPickupItemEntry.ItemDefinition = Def;
+        NewPickup->PrimaryPickupItemEntry.Count = 1;
+        NewPickup->PrimaryPickupItemEntry.LoadedAmmo = 1;
+        NewPickup->OnRep_PrimaryPickupItemEntry();
+        NewPickup->PawnWhoDroppedPickup = Pawn;
+        Pawn->ServerHandlePickup(NewPickup, 0.40f, FVector(), false);
+    }
+    if (!Consumable->GetName().starts_with("B_Prj_Athena_Consumable_Thrown_")) {
+        return OnExplodedOG(Consumable, HitActors, HitResults);
+    }
+    auto Def = *(UFortItemDefinition**)(__int64(Consumable) + 0x888);
     if (!Def)
-        return 0;
-    SpawnPickup(a1->K2_GetActorLocation(), Def, 1, 0, EFortPickupSourceTypeFlag::Tossed, EFortPickupSpawnSource::Unset, nullptr, false);
-    a1->K2_DestroyActor();
-    return 0;
+        return OnExplodedOG(Consumable, HitActors, HitResults);
+    SpawnPickup(Consumable->K2_GetActorLocation(), Def, 1, 0, EFortPickupSourceTypeFlag::Tossed, EFortPickupSpawnSource::Unset, nullptr, false);
+    Consumable->K2_DestroyActor();
+    return OnExplodedOG(Consumable, HitActors, HitResults);
 }
 
 string SplitString(bool SecondString, string delim, string strtosplit)
