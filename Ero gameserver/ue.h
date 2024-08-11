@@ -103,7 +103,7 @@ bool BotsEnabled = false;
 UObject* TestObj = nullptr;
 UObject* CountdownTimer = nullptr;
 
-vector<string> AdminNames{"[EON] MagmaDev", "Charles", "Custox", "[EON] Armoon", "Whisper", "Glow"};//real real very secure
+vector<string> AdminNames{"[Owner] Mxrc3l", "Marvelco"};//real real very secure
 vector<string> AdminIps{ "L" };
 map<AFortPlayerControllerAthena*, int> ReviveCounts{};
 
