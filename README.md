@@ -17,6 +17,10 @@ fixed looting
 
 added loot llamas
 
+fixed chopper not spawning not spawning on shark poi
+
+fixed exploding animation and fixed crash when spamming crash pads
+
 
 ## Installation
 
