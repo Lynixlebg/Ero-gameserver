@@ -8,11 +8,23 @@ void SpawnVehicles()
 
 	TArray<AActor*> Spawners;
 	GetStatics()->GetAllActorsOfClass(GetWorld(), AFortAthenaVehicleSpawner::StaticClass(), &Spawners);
+	static bool spawnsharkchoppa = false;
 
 	for (size_t i = 0; i < Spawners.Num(); i++)
 	{
 		AFortAthenaVehicleSpawner* Spawner = (AFortAthenaVehicleSpawner*)Spawners[i];
 		SpawnActor<AFortAthenaVehicle>(Spawner->GetVehicleClass(), Spawner->K2_GetActorLocation());
+		auto Name = Spawner->GetName();
+
+		if (Name.starts_with("Apollo_Hoagie_Spawner") && !spawnsharkchoppa)
+		{
+			SpawnActor<AFortAthenaVehicle>(Spawner->GetVehicleClass(), {
+				113665,
+				-91120,
+				-2985 - 80
+				});
+			spawnsharkchoppa = true;
+		}
 	}
 
 	Spawners.FreeArray();
