@@ -77,6 +77,7 @@ DWORD InitThread(LPVOID)
     LPVOID OnDamageServerAddr = (LPVOID)(BaseAddr + 0x2683F80);
     LPVOID DestroyPickup = (LPVOID)(BaseAddr + 0x1F96650);
     LPVOID OnPerceptionSensedAddr = (LPVOID)(BaseAddr + 0x163C300);
+    LPVOID ApplyCostAddr = (LPVOID)(BaseAddr + 0x1583360);
 
     SwapVTable(APlayerPawn_Athena_C::StaticClass()->DefaultObject, 0x1EA, ServerHandlePickup, (void**)&ServerHandlePickupOG);
     SwapVTable(APlayerPawn_Athena_C::StaticClass()->DefaultObject, 0x1E6, ServerHandlePickupWithSwap);
@@ -324,6 +325,10 @@ DWORD InitThread(LPVOID)
 
     MH_CreateHook(SpawnDefaultPawnForAddr, SpawnDefaultPawnFor, nullptr);
     MH_EnableHook(SpawnDefaultPawnForAddr);
+
+    MH_CreateHook(ApplyCostAddr, ApplyCost, (LPVOID*)&ApplyCostOG);
+    MH_EnableHook(ApplyCostAddr);
+
     
     cout << BaseAddr << endl;
     cout << sizeof(TWeakObjectPtr<AFortPlayerStateAthena>) << endl;//omg
