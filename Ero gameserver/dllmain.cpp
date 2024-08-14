@@ -12,7 +12,7 @@
 #include "SpyGames.h"
 #include "Looting.h"
 #include "Weapon.h"
-#include "Debug.h"
+#include "PE.h"
 #include "Bots.h"
 #include "minhook/MinHook.h"
 
@@ -35,7 +35,7 @@ DWORD InitThread(LPVOID)
     InitGObjects();
     
     __int64 BaseAddr = __int64(GetModuleHandleW(0));
-    
+
     LPVOID TickFlushAddr = (LPVOID)(BaseAddr + 0x42C3ED0);
     LPVOID KickPlayerAddr = (LPVOID)(BaseAddr + 0x4155600);
     LPVOID WorldNetModeAddr = (LPVOID)(BaseAddr + 0x45C9D90);
@@ -340,7 +340,6 @@ DWORD InitThread(LPVOID)
     cout << sizeof(TWeakObjectPtr<AFortPlayerStateAthena>) << endl;//omg
 
     //return 0;
-
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x20D, ServerExecuteInventoryItem);
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x10D, ServerAcknowledgePossession, (LPVOID*)&ServerAcknowledgePossessionOG);
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x230, ServerCreateBuildingActor, (LPVOID*)&ServerCreateBuildingActorOG);
