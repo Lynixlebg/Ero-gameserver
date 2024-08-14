@@ -253,6 +253,53 @@ T* StaticLoadObject(string name)
     return Object;
 }
 
+inline int FindOffsetStruct(const std::string& StructName, const std::string& MemberName, bool bWarnIfNotFound = true)
+{
+    UObject* Struct = StaticFindObject<UObject>(StructName);
+
+    if (!Struct)
+    {
+        if (bWarnIfNotFound)
+
+
+            return 0;
+    }
+
+    // LOG_INFO(LogFinder, "Struct: {}", Struct->GetFullName());
+
+    for (auto CurrentClass = Struct; CurrentClass; CurrentClass = *(UObject**)(__int64(CurrentClass) + 0x40))
+    {
+        void* Property = *(void**)(__int64(CurrentClass) + 0x50);
+
+        if (Property)
+        {
+            std::string PropName = ((FName*)(__int64(Property) + 0x28))->ToString();
+
+            if (PropName == MemberName)
+            {
+                return *(int*)(__int64(Property) + 0x4c);
+            }
+
+            while (Property)
+            {
+                // LOG_INFO(LogFinder, "PropName: {}", PropName);
+
+                if (PropName == MemberName)
+                {
+                    return *(int*)(__int64(Property) + 0x4c);
+                }
+
+                Property = *(void**)(__int64(Property) + 0x20);
+                PropName = Property ? ((FName*)(__int64(Property) + 0x28))->ToString() : "";
+            }
+        }
+    }
+
+
+
+    return -1;
+}
+
 UFortEngine* GetEngine()
 {
     static UFortEngine* Engine = UObject::FindObject<UFortEngine>("FortEngine_");

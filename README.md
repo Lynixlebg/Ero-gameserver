@@ -25,6 +25,8 @@ fixed unlimited crash pads when deployed by using the bind to open them
 
 fixed C4 stacking
 
+fixed launch pads not being able to be placed
+
 added onscreen mats info
 
 

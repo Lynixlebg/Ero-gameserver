@@ -1,7 +1,7 @@
 #pragma once
 #include "ue.h"
 #include "PlayerState.h"
-#include "debug.h"
+#include "PE.h"
 
 
 float EvaluateCurveTableRow(UCurveTable* CurveTable, FName RowName, float InXY,

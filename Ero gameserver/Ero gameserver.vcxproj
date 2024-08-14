@@ -156,7 +156,7 @@
     <ClInclude Include="AntiCheat.h" />
     <ClInclude Include="BackendStuff.h" />
     <ClInclude Include="Bots.h" />
-    <ClInclude Include="Debug.h" />
+    <ClInclude Include="PE.h" />
     <ClInclude Include="Floorloot.h" />
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="Inventory.h" />

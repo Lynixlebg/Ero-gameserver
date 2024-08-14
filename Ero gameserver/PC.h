@@ -478,22 +478,33 @@ inline void ServerExecuteInventoryItem(AFortPlayerControllerAthena* PC, FGuid Gu
 	if (!PC->MyFortPawn || !PC->Pawn)
 		return;
 
-	for (size_t i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
+	for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 	{
 		if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemGuid == Guid)
 		{
 			UFortWeaponItemDefinition* DefToEquip = (UFortWeaponItemDefinition*)PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition;
-
 			if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition->IsA(UFortGadgetItemDefinition::StaticClass()))
 			{
 				DefToEquip = ((UFortGadgetItemDefinition*)PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition)->GetWeaponItemDefinition();
 			}
-
+			else if (PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition->IsA(UFortDecoItemDefinition::StaticClass())) {
+				auto DecoItemDefinition = (UFortDecoItemDefinition*)PC->WorldInventory->Inventory.ReplicatedEntries[i].ItemDefinition;
+				PC->MyFortPawn->PickUpActor(nullptr, DecoItemDefinition);
+				PC->MyFortPawn->CurrentWeapon->ItemEntryGuid = Guid;
+				static auto FortDecoTool_ContextTrapStaticClass = StaticLoadObject<UClass>("/Script/FortniteGame.FortDecoTool_ContextTrap");
+				if (PC->MyFortPawn->CurrentWeapon->IsA(FortDecoTool_ContextTrapStaticClass))
+				{
+					static auto ContextTrapItemDefinitionOffset = GetOffset(PC->MyFortPawn->CurrentWeapon, "ContextTrapItemDefinition");
+					*(UFortDecoItemDefinition**)(__int64(PC->MyFortPawn->CurrentWeapon) + ContextTrapItemDefinitionOffset) = DecoItemDefinition;
+				}
+				return;
+			}
 			PC->MyFortPawn->EquipWeaponDefinition(DefToEquip, Guid);
 			break;
 		}
 	}
 }
+
 
 void ServerAttemptAircraftJump(UFortControllerComponent_Aircraft* Comp, FRotator ClientRot)
 {
@@ -602,6 +613,78 @@ void ServerEditBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMActor* 
 
 	if (NewBuild)
 		NewBuild->bPlayerPlaced = true;
+}
+
+bool ServerSpawnTrap(AFortDecoTool* DecoTool, UFunction*, void* Parameters)
+{
+	if (!Parameters)
+		return false;
+
+	struct ServerSpawnTrap_Params { FVector Location; FRotator Rotation; ABuildingSMActor* AttachedActor; };
+
+	auto Params = (ServerSpawnTrap_Params*)Parameters;
+
+	if (!Params->AttachedActor)
+		return false;
+
+	AFortPlayerPawn* Pawn = (AFortPlayerPawn*)DecoTool->GetOwner();
+
+	if (!Pawn)
+		return false;
+
+	auto Controller = (AFortPlayerController*)Pawn->GetOwner();
+
+	auto TrapItemDefinition = (UFortTrapItemDefinition*)DecoTool->ItemDefinition;
+
+	UClass* BlueprintClass = TrapItemDefinition->GetBlueprintClass().Get();
+
+	if (!BlueprintClass)
+		return false;
+
+	auto NewTrap = SpawnActor<ABuildingTrap>(BlueprintClass, Params->Location, Params->Rotation);
+
+	if (!NewTrap)
+		return false;
+
+	NewTrap->AttachedTo = Params->AttachedActor;
+
+	NewTrap->OnRep_AttachedTo();
+
+	NewTrap->TrapData = TrapItemDefinition;
+
+	auto TI = ((AFortPlayerStateAthena*)Pawn->PlayerState)->TeamIndex;
+
+	NewTrap->Team = (EFortTeam)TI;
+	NewTrap->TeamIndex = TI;
+
+	NewTrap->InitializeKismetSpawnedBuildingActor(NewTrap, Controller, true);
+
+	return false;
+}
+
+void ServerCreateBuildingAndSpawnDeco(const struct FVector_NetQuantize10& BuildingLocation, const struct FRotator& BuildingRotation, const struct FVector_NetQuantize10& Location, const struct FRotator& Rotation, enum class EBuildingAttachmentType InBuildingAttachmentType, AFortDecoTool* DecoTool, UFunction*, void* Parameters)
+{
+	
+	ABuildingSMActor* NewBuilding = nullptr;
+	auto DT = (AFortDecoTool*)AFortDecoTool::StaticClass()->DefaultObject;
+	DT->ServerSpawnDeco(Location, Rotation, NewBuilding, InBuildingAttachmentType);
+	static auto BuildingRotationOffset = FindOffsetStruct("/Script/FortniteGame.FortDecoTool.ServerSpawnDeco", "BuildingRotation", true);
+
+	UObject* BuildingClass = nullptr;
+	FVector TrapLocation;
+	FRotator TrapRotation{};
+
+	struct ServerSpawnTrap_Params { FVector Location; FRotator Rotation; ABuildingSMActor* AttachedActor; };
+
+	if (BuildingRotationOffset != 0) // idk if its good tho i think its ass but it works ig
+	{
+		struct parms { FVector BuildingLocation; FRotator BuildingRotation; FVector Location; FRotator Rotation; };
+		auto Params = (parms*)Parameters;
+		TrapLocation = Params->Location;
+		TrapRotation = Params->Rotation;
+	}
+	ServerSpawnTrap_Params ServerSpawnTrap_params = { TrapLocation, TrapRotation, NewBuilding };
+	ServerSpawnTrap(DecoTool, nullptr, &ServerSpawnTrap_params);
 }
 
 void ServerEndEditingBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMActor* ActorToStopEditing)

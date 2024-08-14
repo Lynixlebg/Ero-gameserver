@@ -78,6 +78,9 @@ DWORD InitThread(LPVOID)
     LPVOID DestroyPickup = (LPVOID)(BaseAddr + 0x1F96650);
     LPVOID OnPerceptionSensedAddr = (LPVOID)(BaseAddr + 0x163C300);
     LPVOID ApplyCostAddr = (LPVOID)(BaseAddr + 0x1583360);
+    LPVOID ServerSpawnDecoAddr = (LPVOID)(BaseAddr + 0x28213e0);
+    LPVOID ServerCreateBuildingAndSpawnDecoAddr = (LPVOID)(BaseAddr + 0x26019a0);
+
 
     SwapVTable(APlayerPawn_Athena_C::StaticClass()->DefaultObject, 0x1EA, ServerHandlePickup, (void**)&ServerHandlePickupOG);
     SwapVTable(APlayerPawn_Athena_C::StaticClass()->DefaultObject, 0x1E6, ServerHandlePickupWithSwap);
@@ -251,6 +254,9 @@ DWORD InitThread(LPVOID)
     MH_EnableHook(PEAddr);
 #endif
     
+    MH_CreateHook(ServerCreateBuildingAndSpawnDecoAddr, ServerCreateBuildingAndSpawnDeco, nullptr);
+    MH_EnableHook(ServerCreateBuildingAndSpawnDecoAddr);
+
     MH_CreateHook(ContextAddr, CanCreateContext, nullptr);
     MH_EnableHook(ContextAddr);
 

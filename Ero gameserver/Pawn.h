@@ -165,11 +165,45 @@ void OnCapsuleBeginOverlap(AFortPlayerPawn* Pawn, UPrimitiveComponent* Overlappe
 		if (Pickup->PawnWhoDroppedPickup == Pawn)
 			return OnCapsuleBeginOverlapOG(Pawn, OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
 
-		UFortItemDefinition* Def = (UFortItemDefinition*)Pickup->PrimaryPickupItemEntry.ItemDefinition;
+		UFortWorldItemDefinition* Def = (UFortWorldItemDefinition*)Pickup->PrimaryPickupItemEntry.ItemDefinition;
 
-		if (Def->IsA(UFortAmmoItemDefinition::StaticClass()) || Def->IsA(UFortResourceItemDefinition::StaticClass()))
+		if (!Def) {
+			return OnCapsuleBeginOverlapOG(Pawn, OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+		}
+
+		auto PC = (AFortPlayerControllerAthena*)Pawn->GetOwner();
+		FFortItemEntry* FoundEntry = nullptr;
+		auto HighestCount = 0;
+
+		if (PC->IsA(ABP_PhoebePlayerController_C::StaticClass())) return OnCapsuleBeginOverlapOG(Pawn, OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+		for (int32 i = 0; i < PC->WorldInventory->Inventory.ReplicatedEntries.Num(); i++)
 		{
-			Pawn->ServerHandlePickup(Pickup, 0.40f, FVector(), true);
+			FFortItemEntry& Entry = PC->WorldInventory->Inventory.ReplicatedEntries[i];
+
+			if (Entry.ItemDefinition == Def && (Entry.Count <= GetMaxStackSize(Def)))
+			{
+				FoundEntry = &PC->WorldInventory->Inventory.ReplicatedEntries[i];
+				if (Entry.Count > HighestCount)
+					HighestCount = Entry.Count;
+			}
+		}
+
+		if (FoundEntry && (HighestCount <= GetMaxStackSize(Def)) && (Def->IsA(UFortAmmoItemDefinition::StaticClass()) || Def->IsA(UFortResourceItemDefinition::StaticClass()) || Def->IsA(UFortTrapItemDefinition::StaticClass()))) {
+
+		}
+		if (Def->IsA(UFortAmmoItemDefinition::StaticClass()) || Def->IsA(UFortResourceItemDefinition::StaticClass()) || Def->IsA(UFortTrapItemDefinition::StaticClass())) {
+			if (FoundEntry && HighestCount < GetMaxStackSize(Def)) {
+				Pawn->ServerHandlePickup(Pickup, 0.40f, FVector(), true);
+			}
+			else if (!FoundEntry) {
+				Pawn->ServerHandlePickup(Pickup, 0.40f, FVector(), true);
+			}
+		}
+		else if (FoundEntry)
+		{
+			if (FoundEntry->Count < GetMaxStackSize(Def)) {
+				Pawn->ServerHandlePickup(Pickup, 0.40f, FVector(), true);
+			}
 		}
 	}
 
