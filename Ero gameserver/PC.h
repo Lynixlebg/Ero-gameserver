@@ -601,6 +601,44 @@ void ServerBeginEditBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMAc
 	PC->ServerExecuteInventoryItem(EditToolEntry->ItemGuid);
 }
 
+void ServerRepairBuildingActor(AFortPlayerController* PC, ABuildingSMActor* BuildingActorToRepair)
+{
+	if (!BuildingActorToRepair // not needed but there is a glitch where brick build could be repaired even if there health is full
+		)
+		return;
+
+	if (BuildingActorToRepair->EditingPlayer) // this is to patch a glitch
+	{
+		return;
+	}
+
+	float BuildingHealthPercent = BuildingActorToRepair->GetHealthPercent();
+
+	//realy not the best way to do these but they work (we should just hook these)
+
+	float BuildingCost = 10;
+	float RepairCostMultiplier = 0.75;
+
+	float BuildingHealthPercentLost = 1.0f - BuildingHealthPercent;
+	float RepairCostUnrounded = (BuildingCost * BuildingHealthPercentLost) * RepairCostMultiplier;
+	float RepairCost = std::floor(RepairCostUnrounded > 0 ? RepairCostUnrounded < 1 ? 1 : RepairCostUnrounded : 0);
+
+	if (RepairCost < 0)
+		return;
+
+	auto ResDef = GetFortKismet()->K2_GetResourceItemDefinition(BuildingActorToRepair->ResourceType);
+
+	if (!ResDef)
+		return;
+
+	if (!PC->bBuildFree)
+	{
+		Remove(PC, ResDef, (int)RepairCost);
+	}
+
+	BuildingActorToRepair->RepairBuilding(PC, (int)RepairCost);
+}
+
 void ServerEditBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMActor* ActorToEdit, TSubclassOf<ABuildingSMActor> NewClass, uint8 RotationIterations, bool bMirrored)
 {
 	if (!PC || !ActorToEdit || !NewClass.Get())

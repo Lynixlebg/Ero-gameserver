@@ -340,6 +340,7 @@ DWORD InitThread(LPVOID)
     cout << sizeof(TWeakObjectPtr<AFortPlayerStateAthena>) << endl;//omg
 
     //return 0;
+    SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x22C, ServerRepairBuildingActor);
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x20D, ServerExecuteInventoryItem);
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x10D, ServerAcknowledgePossession, (LPVOID*)&ServerAcknowledgePossessionOG);
     SwapVTable(AAthena_PlayerController_C::StaticClass()->DefaultObject, 0x230, ServerCreateBuildingActor, (LPVOID*)&ServerCreateBuildingActorOG);
