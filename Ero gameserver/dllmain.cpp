@@ -18,19 +18,41 @@
 
 #pragma comment(lib, "minhook/minhook.lib")
 
+void* DLLAddr;
+
+
+static inline void Hook(void* target, void* detour, void** orig = nullptr) {
+    MH_CreateHook(target, detour, orig);
+    MH_EnableHook(target);
+}
 
 __int64 NoMcpHook()
 {
     return !bUsingApi;
 }
 
-DWORD InitThread(LPVOID)
+DWORD WINAPI InitThread(LPVOID)
 {
     AllocConsole();
-    FILE* Console;
-    freopen_s(&Console, "CONOUT$", "w", stdout);
-    printf("injected gs\n");
-    srand(time(0));
+    FILE* Console = nullptr;
+    freopen_s(&Console, "CONOUT$", "w+", stdout);
+
+    HANDLE hConsole = CreateFileA("CONOUT$",
+        GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE,
+        NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+    DWORD dwMode = 0;
+    if (!GetConsoleMode(hConsole, &dwMode)) {
+        while (true) { Sleep(1000); }
+        return 1;
+    }
+
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    if (!SetConsoleMode(hConsole, dwMode)) {
+        while (true) { Sleep(1000); }
+        return 1;
+    }
+    srand((unsigned int)time(0));
     MH_Initialize();
     InitGObjects();
     
@@ -254,86 +276,33 @@ DWORD InitThread(LPVOID)
     MH_EnableHook(PEAddr);
 #endif
     
-    MH_CreateHook(ServerCreateBuildingAndSpawnDecoAddr, ServerCreateBuildingAndSpawnDeco, nullptr);
-    MH_EnableHook(ServerCreateBuildingAndSpawnDecoAddr);
-
-    MH_CreateHook(ContextAddr, CanCreateContext, nullptr);
-    MH_EnableHook(ContextAddr);
-
-    MH_CreateHook(UnlockPerkForPlayerAddr, UnlockPerkForPlayer, (void**)&UnlockPerkForPlayerOG);
-    MH_EnableHook(UnlockPerkForPlayerAddr);
-
-    MH_CreateHook(OnPerceptionSensedAddr, OnPerceptionSensed, (void**)&OnPerceptionSensedOG);
-    MH_EnableHook(OnPerceptionSensedAddr);
-
-    MH_CreateHook(OnDamageServerAddr, OnDamageServer, (void**)&OnDamageServerOG);
-    MH_EnableHook(OnDamageServerAddr);
-
-    MH_CreateHook(OnPossessedPawnDiedAddr, OnPossessedPawnDied, (void**)&OnPossessedPawnDiedOG);
-    MH_EnableHook(OnPossessedPawnDiedAddr);
-
-    MH_CreateHook(SpawnPlayActorAddr, SpawnPlayActor, (void**)&SpawnPlayActorOG);
-    MH_EnableHook(SpawnPlayActorAddr);
-
-    MH_CreateHook(StartAircraftPhaseAddr, StartAircraftPhaseHook, (void**)&StartAircraftPhase);
-    MH_EnableHook(StartAircraftPhaseAddr);
-
-    MH_CreateHook(ServerAttemptInteractAddr, ServerAttemptInteract, (void**)&ServerAttemptInteractOG);
-    MH_EnableHook(ServerAttemptInteractAddr);
-
-    MH_CreateHook(SetMatchPlacementAddr, SetMatchPlacementHook, (void**)&SetMatchPlacement);
-    MH_EnableHook(SetMatchPlacementAddr);
-
-    MH_CreateHook(GameSessionRestartAddr, GameSessionRestart, nullptr);
-    MH_EnableHook(GameSessionRestartAddr);
-
-    MH_CreateHook(stormaddr, stormstuff, (void**)&stormstuffOG);
-    MH_EnableHook(stormaddr);
-
-    MH_CreateHook(OnCapsuleBeginOverlapAddr, OnCapsuleBeginOverlap, (void**)&OnCapsuleBeginOverlapOG);
-    MH_EnableHook(OnCapsuleBeginOverlapAddr);
-
-    MH_CreateHook(TickFlushAddr, TickFlushHook, (LPVOID*)&TickFlushOG);
-    MH_EnableHook(TickFlushAddr);
-
-    MH_CreateHook(PreloginAddr, Prelogin, (LPVOID*)&PreloginOG);
-    MH_EnableHook(PreloginAddr);
-    
-    MH_CreateHook(ReloadAddr, OnReload, (LPVOID*)&OnReloadOG);
-    MH_EnableHook(ReloadAddr);
-
-    MH_CreateHook(Test3Addr, test3, (LPVOID*)&test3OG);
-    MH_EnableHook(Test3Addr);
-
-    MH_CreateHook(OnAircraftExitDropZoneAddr, OnAircraftExitedDropZone, (LPVOID*)&OnAircraftExitedDropZoneOG);
-    MH_EnableHook(OnAircraftExitDropZoneAddr);
-
-    MH_CreateHook(ClientOnPawnDiedAddr, ClientOnPawnDied, (LPVOID*)&ClientOnPawnDiedOG);
-    MH_EnableHook(ClientOnPawnDiedAddr);
-    
-    MH_CreateHook(SpawnLootAddr, SpawnLoot, nullptr);
-    MH_EnableHook(SpawnLootAddr);
-
-    MH_CreateHook(SpawnBotAddr, SpawnBot, (void**)&SpawnBotOG);
-    MH_EnableHook(SpawnBotAddr);
-
-    MH_CreateHook(QueryPatchAddr, MCP_DispatchRequestHook, (LPVOID*)&MCP_DispatchRequest);
-    MH_EnableHook(QueryPatchAddr);
-
-    MH_CreateHook(ServerReadyToStartMatchAddr, ServerReadyToStartMatch, (LPVOID*)&ServerReadyToStartMatchOG);
-    MH_EnableHook(ServerReadyToStartMatchAddr);
-
-    MH_CreateHook(ServerLoadingScreenDroppedAddr, ServerLoadingScreenDropped, (LPVOID*)&ServerLoadingScreenDroppedOG);
-    MH_EnableHook(ServerLoadingScreenDroppedAddr);
-
-    MH_CreateHook(ReadyToStartMatchAddr, ReadyToStartMatch, (LPVOID*)&ReadyToStartMatchOG);
-    MH_EnableHook(ReadyToStartMatchAddr);
-
-    MH_CreateHook(SpawnDefaultPawnForAddr, SpawnDefaultPawnFor, nullptr);
-    MH_EnableHook(SpawnDefaultPawnForAddr);
-
-    MH_CreateHook(ApplyCostAddr, ApplyCost, (LPVOID*)&ApplyCostOG);
-    MH_EnableHook(ApplyCostAddr);
+    Hook(ContextAddr, CanCreateContext);
+    Hook(UnlockPerkForPlayerAddr, UnlockPerkForPlayer, (void**)&UnlockPerkForPlayerOG);
+    Hook(OnPerceptionSensedAddr, OnPerceptionSensed, (void**)&OnPerceptionSensedOG);
+    //PlooshHook(OnAlertLevelChangedAddr, OnAlertLevelChanged, (void**)&OnAlertLevelChangedOG);
+    Hook(OnDamageServerAddr, OnDamageServer, (void**)&OnDamageServerOG);
+    Hook(OnPossessedPawnDiedAddr, OnPossessedPawnDied, (void**)&OnPossessedPawnDiedOG);
+    Hook(SpawnPlayActorAddr, SpawnPlayActor, (void**)&SpawnPlayActorOG);
+    Hook(StartAircraftPhaseAddr, StartAircraftPhaseHook, (void**)&StartAircraftPhase);
+    Hook(ServerAttemptInteractAddr, ServerAttemptInteract, (void**)&ServerAttemptInteractOG);
+    Hook(SetMatchPlacementAddr, SetMatchPlacementHook, (void**)&SetMatchPlacement);
+    Hook(GameSessionRestartAddr, GameSessionRestart);
+    Hook(stormaddr, stormstuff, (void**)&stormstuffOG);
+    Hook(OnCapsuleBeginOverlapAddr, OnCapsuleBeginOverlap, (void**)&OnCapsuleBeginOverlapOG);
+    Hook(TickFlushAddr, TickFlushHook, (LPVOID*)&TickFlushOG);
+    Hook(PreloginAddr, Prelogin, (LPVOID*)&PreloginOG);
+    Hook(ReloadAddr, OnReload, (LPVOID*)&OnReloadOG);
+    Hook(Test3Addr, test3, (LPVOID*)&test3OG);
+    Hook(OnAircraftExitDropZoneAddr, OnAircraftExitedDropZone, (LPVOID*)&OnAircraftExitedDropZoneOG);
+    Hook(ClientOnPawnDiedAddr, ClientOnPawnDied, (LPVOID*)&ClientOnPawnDiedOG);
+    Hook(SpawnLootAddr, SpawnLoot);
+    Hook(SpawnBotAddr, SpawnBot, (void**)&SpawnBotOG);
+    Hook(QueryPatchAddr, MCP_DispatchRequestHook, (LPVOID*)&MCP_DispatchRequest);
+    Hook(ServerReadyToStartMatchAddr, ServerReadyToStartMatch, (LPVOID*)&ServerReadyToStartMatchOG);
+    Hook(ServerLoadingScreenDroppedAddr, ServerLoadingScreenDropped, (LPVOID*)&ServerLoadingScreenDroppedOG);
+    Hook(ReadyToStartMatchAddr, ReadyToStartMatch, (LPVOID*)&ReadyToStartMatchOG);
+    Hook(SpawnDefaultPawnForAddr, SpawnDefaultPawnFor);
+    Hook(ApplyCostAddr, ApplyCost, (LPVOID*)&ApplyCostOG);
 
     
     cout << BaseAddr << endl;
@@ -358,41 +327,31 @@ DWORD InitThread(LPVOID)
     SwapVTable(APlayerPawn_Athena_C::StaticClass()->DefaultObject, 0x1D2, ServerReviveFromDBNO);
     SwapVTable(UFortControllerComponent_Aircraft::StaticClass()->DefaultObject, 0x89, ServerAttemptAircraftJump);
 
-    MH_CreateHook(KickPlayerAddr, KickPlayerHook, nullptr);
-    MH_EnableHook(KickPlayerAddr);
-
-    MH_CreateHook(PickTeamAddr, PickTeam, nullptr);
-    MH_EnableHook(PickTeamAddr);
-
-    MH_CreateHook(WorldNetModeAddr, WorldNetMode, nullptr);
-    MH_EnableHook(WorldNetModeAddr);
-    
-    MH_CreateHook(CollectGarbageAddr, CollectGarbage, nullptr);
-    MH_EnableHook(CollectGarbageAddr);
-
-    MH_CreateHook(GetMaxTickRateAddrOK, GetMaxTickRate, nullptr);
-    MH_EnableHook(GetMaxTickRateAddrOK);
-
-    MH_CreateHook(ActorNetModeCrashAddr, GameSessionIdThing, nullptr);
-    MH_EnableHook(ActorNetModeCrashAddr);
-    
-    MH_CreateHook(ActorNetModeAddr, ActorNetMode, nullptr);
-    MH_EnableHook(ActorNetModeAddr);
-
-    MH_CreateHook(GetPlayerViewpointAddr, GetPlayerViewPoint, (void**)&GetPlayerViewPointOG);
-    MH_EnableHook(GetPlayerViewpointAddr);
+    Hook(KickPlayerAddr, KickPlayerHook);
+    Hook(PickTeamAddr, PickTeam);
+    Hook(WorldNetModeAddr, WorldNetMode);
+    Hook(CollectGarbageAddr, CollectGarbage);
+    Hook(GetMaxTickRateAddrOK, GetMaxTickRate);
+    Hook(ActorNetModeCrashAddr, GameSessionIdThing);
+    Hook(ActorNetModeAddr, ActorNetMode);
+    Hook(GetPlayerViewpointAddr, GetPlayerViewPoint, (void**)&GetPlayerViewPointOG);
     
     UFortAbilitySystemComponentAthena* DefObj = (UFortAbilitySystemComponentAthena*)UFortAbilitySystemComponentAthena::StaticClass()->DefaultObject;
     UFortAbilitySystemComponent* DefObj2 = (UFortAbilitySystemComponent*)UFortAbilitySystemComponent::StaticClass()->DefaultObject;
     UAbilitySystemComponent* DefObj3 = (UAbilitySystemComponent*)UAbilitySystemComponent::StaticClass()->DefaultObject;
 
-    SwapVTable(DefObj, 0xFA, InternalServerTryActivateAbilityHook);
-    SwapVTable(DefObj2, 0xFA, InternalServerTryActivateAbilityHook);
-    SwapVTable(DefObj3, 0xFA, InternalServerTryActivateAbilityHook);
-    
-    ((UGameplayStatics*)UGameplayStatics::StaticClass()->DefaultObject)->OpenLevel(GetWorld(), ((UKismetStringLibrary*)UKismetStringLibrary::StaticClass()->DefaultObject)->Conv_StringToName(TEXT("Apollo_Terrain")), false, FString());
+    bool* GIsClient = (bool*)(__int64(GetModuleHandleA(0)) + 0x804B658);
+    bool* GIsServer = (bool*)(__int64(GetModuleHandleA(0)) + 0x804B65A);
 
-    GetEngine()->GameInstance->LocalPlayers.FreeArray();
+    *GIsClient = true;
+    *GIsServer = true;
+
+    GetEngine()->GameInstance->LocalPlayers.RemoveSingle(0);
+
+    while (!GetStatics()->Class) {
+        Sleep(100);
+    }
+    GetStatics()->OpenLevel(GetWorld(), Conv_StringToName(L"Apollo_Terrain"), false, FString());
     Ready = true;
 
     return 0;
@@ -403,9 +362,12 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     LPVOID lpReserved
 )
 {
+    CURL* curl;
+    std::string json;
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
+        DLLAddr = hModule;
         CreateThread(0, 0, InitThread, 0, 0, 0);
         break;
     case DLL_PROCESS_DETACH:
