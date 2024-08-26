@@ -11,6 +11,8 @@ proper looting and correct lootpool
 
 Deadpool bus
 
+Deadpool SupplyDrops
+
 removed vaulted vehicles from spawning
 
 fixed looting

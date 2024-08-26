@@ -395,6 +395,9 @@ bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 	static auto OverrideBattleBusSkin = StaticFindObject<UAthenaBattleBusItemDefinition>("/Game/Athena/Items/Cosmetics/BattleBuses/BBID_DonutBus.BBID_DonutBus");
 	GetGameState()->DefaultBattleBus = OverrideBattleBusSkin;
 
+	static auto OverrideSupplyDropSkin = StaticLoadObject<UClass>("/Game/Athena/SupplyDrops/AthenaSupplyDrop_Donut.AthenaSupplyDrop_Donut_C");
+	GetGameState()->MapInfo->SupplyDropInfoList[0]->SupplyDropClass = OverrideSupplyDropSkin;
+
 	static bool bSpawnedLlamas = false;
 
 	if (bllamas && !bSpawnedLlamas) {
