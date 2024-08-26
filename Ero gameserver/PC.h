@@ -653,77 +653,6 @@ void ServerEditBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMActor* 
 		NewBuild->bPlayerPlaced = true;
 }
 
-bool ServerSpawnTrap(AFortDecoTool* DecoTool, UFunction*, void* Parameters)
-{
-	if (!Parameters)
-		return false;
-
-	struct ServerSpawnTrap_Params { FVector Location; FRotator Rotation; ABuildingSMActor* AttachedActor; };
-
-	auto Params = (ServerSpawnTrap_Params*)Parameters;
-
-	if (!Params->AttachedActor)
-		return false;
-
-	AFortPlayerPawn* Pawn = (AFortPlayerPawn*)DecoTool->GetOwner();
-
-	if (!Pawn)
-		return false;
-
-	auto Controller = (AFortPlayerController*)Pawn->GetOwner();
-
-	auto TrapItemDefinition = (UFortTrapItemDefinition*)DecoTool->ItemDefinition;
-
-	UClass* BlueprintClass = TrapItemDefinition->GetBlueprintClass().Get();
-
-	if (!BlueprintClass)
-		return false;
-
-	auto NewTrap = SpawnActor<ABuildingTrap>(BlueprintClass, Params->Location, Params->Rotation);
-
-	if (!NewTrap)
-		return false;
-
-	NewTrap->AttachedTo = Params->AttachedActor;
-
-	NewTrap->OnRep_AttachedTo();
-
-	NewTrap->TrapData = TrapItemDefinition;
-
-	auto TI = ((AFortPlayerStateAthena*)Pawn->PlayerState)->TeamIndex;
-
-	NewTrap->Team = (EFortTeam)TI;
-	NewTrap->TeamIndex = TI;
-
-	NewTrap->InitializeKismetSpawnedBuildingActor(NewTrap, Controller, true);
-
-	return false;
-}
-
-void ServerCreateBuildingAndSpawnDeco(const struct FVector_NetQuantize10& BuildingLocation, const struct FRotator& BuildingRotation, const struct FVector_NetQuantize10& Location, const struct FRotator& Rotation, enum class EBuildingAttachmentType InBuildingAttachmentType, AFortDecoTool* DecoTool, UFunction*, void* Parameters)
-{
-	
-	ABuildingSMActor* NewBuilding = nullptr;
-	auto DT = (AFortDecoTool*)AFortDecoTool::StaticClass()->DefaultObject;
-	DT->ServerSpawnDeco(Location, Rotation, NewBuilding, InBuildingAttachmentType);
-	static auto BuildingRotationOffset = FindOffsetStruct("/Script/FortniteGame.FortDecoTool.ServerSpawnDeco", "BuildingRotation", true);
-
-	UObject* BuildingClass = nullptr;
-	FVector TrapLocation;
-	FRotator TrapRotation{};
-
-	struct ServerSpawnTrap_Params { FVector Location; FRotator Rotation; ABuildingSMActor* AttachedActor; };
-
-	if (BuildingRotationOffset != 0) // idk if its good tho i think its ass but it works ig
-	{
-		struct parms { FVector BuildingLocation; FRotator BuildingRotation; FVector Location; FRotator Rotation; };
-		auto Params = (parms*)Parameters;
-		TrapLocation = Params->Location;
-		TrapRotation = Params->Rotation;
-	}
-	ServerSpawnTrap_Params ServerSpawnTrap_params = { TrapLocation, TrapRotation, NewBuilding };
-	ServerSpawnTrap(DecoTool, nullptr, &ServerSpawnTrap_params);
-}
 
 void ServerEndEditingBuildingActor(AFortPlayerControllerAthena* PC, ABuildingSMActor* ActorToStopEditing)
 {
@@ -757,7 +686,7 @@ void ServerPlayEmoteItem(AFortPlayerControllerAthena* PC, UFortMontageItemDefini
 
 void ServerReturnToMainMenu(AFortPlayerControllerAthena* PC)
 {
-	PC->ClientReturnToMainMenu(TEXT(""));
+	PC->ClientReturnToMainMenu(TEXT("we can go band 4 band"));
 }
 
 void (*ClientOnPawnDiedOG)(AFortPlayerControllerAthena* PC, FFortPlayerDeathReport DeathReport);

@@ -26,7 +26,22 @@ void ProcessEventHook(UObject* Obj, UFunction* Func, void* Params)
         cout << __int64((*(void***)Obj->Class->DefaultObject)) - __int64(GetModuleHandleW(0)) << endl;
     }
 
-    if (Func->GetName() == "ServerSpawnDeco")
+    if (Func->GetName() == "ServerSpawnDeco") {
+        ProcessEventOG(Obj, Func, Params);
+        auto TT = (AFortTrapTool*)Obj;
+
+        auto Def = TT->ItemDefinition;
+        auto Pawn = (AFortPlayerPawn*)TT->GetOwner();
+        auto PC = (AFortPlayerController*)Pawn->GetOwner();
+
+        if (!PC->bInfiniteAmmo) {
+            Remove(PC, Def);
+        }
+
+        return;
+    }
+
+    else if (Func->GetName() == "ServerCreateBuildingAndSpawnDeco")
     {
         struct ServerSpawnDeco_Params {
             FVector Location;
