@@ -33,6 +33,8 @@ fixed launch pads not being able to be placed
 
 added healing to builds
 
+added working upgrade benches
+
 ## Installation
 
 1. Clone this repository or download it

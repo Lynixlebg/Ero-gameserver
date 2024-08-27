@@ -102,6 +102,37 @@ void SwapVTable(void* base, int Idx, void* Detour, void** OG = nullptr)
     VirtualProtect(&VTable[Idx], sizeof(void*), oldProtection, NULL);
 }
 
+UFortWorldItem* FindItemInstance(AFortInventory* inv, UFortItemDefinition* ItemDefinition)
+{
+    auto& ItemInstances = inv->Inventory.ItemInstances;
+
+    for (int i = 0; i < ItemInstances.Num(); i++)
+    {
+        auto ItemInstance = ItemInstances[i];
+
+        if (ItemInstance->ItemEntry.ItemDefinition == ItemDefinition)
+            return ItemInstance;
+    }
+
+    return nullptr;
+}
+
+UFortWorldItem* FindItemInstance(AFortInventory* inv, const FGuid& Guid)
+{
+    auto& ItemInstances = inv->Inventory.ItemInstances;
+
+    for (int i = 0; i < ItemInstances.Num(); i++)
+    {
+        auto ItemInstance = ItemInstances[i];
+
+        if (ItemInstance->ItemEntry.ItemGuid == Guid)
+            return ItemInstance;
+    }
+
+    return nullptr;
+}
+
+
 float GetMaxTickRate(UGameEngine* Engine, float a2, bool a3)
 {
     return 30.f;
@@ -588,6 +619,110 @@ void ServerAttemptInteract(UFortControllerComponent_Interaction* Comp, AActor* R
             SpawnPickup(ReceivingActor->K2_GetActorLocation(), WoodDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
             SpawnPickup(ReceivingActor->K2_GetActorLocation(), StoneDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
             SpawnPickup(ReceivingActor->K2_GetActorLocation(), MetalDef, 30, 0, EFortPickupSourceTypeFlag::Container, EFortPickupSpawnSource::Unset);
+        }
+    }
+    else if (ReceivingActor->GetName().contains("Wumba"))
+    {
+        {
+            auto UpgradeBench = (AB_Athena_Wumba_C*)ReceivingActor;
+            auto WoodCostCurve = UpgradeBench->WoodCostCurve;
+            auto HorizontalEnabled = UpgradeBench->HorizontalEnabled;
+            static auto WumbaDataTable = StaticLoadObject<UDataTable>("/Game/Items/Datatables/AthenaWumbaData.AthenaWumbaData");
+            static auto LootPackagesRowMap = WumbaDataTable->RowMap;
+
+            auto fortnite = LootPackagesRowMap.Pairs.Elements.Data;
+            auto Pawn = PC->MyFortPawn;
+            auto CurrentHeldWeapon = Pawn->CurrentWeapon;
+            auto CurrentHeldWeaponDef = CurrentHeldWeapon->WeaponData;
+
+            FWeaponUpgradeItemRow* FoundRow = nullptr;
+
+            static auto WoodItemData = StaticLoadObject<UFortItemDefinition>(("/Game/Items/ResourcePickups/WoodItemData.WoodItemData"));
+            static auto StoneItemData = StaticLoadObject<UFortItemDefinition>(("/Game/Items/ResourcePickups/StoneItemData.StoneItemData"));
+            static auto MetalItemData = StaticLoadObject<UFortItemDefinition>(("/Game/Items/ResourcePickups/MetalItemData.MetalItemData"));
+
+            auto WoodInstance = FindItemInstance(PC->WorldInventory, WoodItemData);
+            auto WoodCount = WoodInstance->ItemEntry.Count;
+
+            auto StoneInstance = FindItemInstance(PC->WorldInventory, StoneItemData);
+            auto StoneCount = StoneInstance->ItemEntry.Count;
+
+            auto MetalInstance = FindItemInstance(PC->WorldInventory, MetalItemData);
+            auto MetalCount = MetalInstance->ItemEntry.Count;
+
+            int Direction = 1;
+
+            if (InteractionBeingAttempted == EInteractionBeingAttempted::SecondInteraction) {
+                for (int i = 0; i < fortnite.Num() - 1; i++)
+                {
+                    auto Man = fortnite[i];
+                    auto& Pair = Man.ElementData.Value;
+                    auto RowFName = Pair.First;
+
+                    if (!RowFName.ComparisonIndex)
+                        continue;
+
+                    auto RowName = RowFName.ToString();
+                    auto Row = (FWeaponUpgradeItemRow*)Pair.Second;
+
+                    if (Row->CurrentWeaponDef == CurrentHeldWeaponDef && Row->Direction == EFortWeaponUpgradeDirection::Horizontal)
+                    {
+                        FoundRow = Row;
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < fortnite.Num() - 1; i++)
+                {
+                    auto Man = fortnite[i];
+                    auto& Pair = Man.ElementData.Value;
+                    auto RowFName = Pair.First;
+
+                    if (!RowFName.ComparisonIndex)
+                        continue;
+
+                    auto RowName = RowFName.ToString();
+                    auto Row = (FWeaponUpgradeItemRow*)Pair.Second;
+
+                    if (Row->CurrentWeaponDef == CurrentHeldWeaponDef)
+                    {
+                        FoundRow = Row;
+                        break;
+                    }
+                }
+            }
+
+            if (!FoundRow)
+            {
+                return;
+            }
+
+            auto NewDefinition = FoundRow->UpgradedWeaponDef;
+
+            int WoodCost;
+            int StoneCost;
+            int MetalCost;
+
+            {
+                WoodCost = (int)FoundRow->WoodCost * 50;
+                StoneCost = (int)FoundRow->BrickCost * 50;
+                MetalCost = (int)FoundRow->MetalCost * 50;
+            }
+            if (!PC->bInfiniteAmmo) {
+                if (FoundRow->Direction == EFortWeaponUpgradeDirection::Vertical) {
+                    Remove(PC, WoodInstance->ItemEntry.ItemDefinition, (int)FoundRow->WoodCost * 50);
+                    Remove(PC, StoneInstance->ItemEntry.ItemDefinition, ((int)FoundRow->BrickCost - 8) * 50);
+                    Remove(PC, MetalInstance->ItemEntry.ItemDefinition, ((int)FoundRow->MetalCost - 4) * 50);
+                }
+                else {
+                    Remove(PC, WoodInstance->ItemEntry.ItemDefinition, 20);
+                    Remove(PC, StoneInstance->ItemEntry.ItemDefinition, 20);
+                    Remove(PC, MetalInstance->ItemEntry.ItemDefinition, 20);
+                }
+            }
+            Remove(PC, CurrentHeldWeapon->ItemEntryGuid);
+            GiveItem(PC, NewDefinition, 1,CurrentHeldWeapon->GetMagazineAmmoCount());
         }
     }
     //else if (ReceivingActor->IsA(AFortAthenaVehicle::StaticClass()))
