@@ -3,8 +3,6 @@
 
 Ero gameserver is some what of a rewrite of Eon gameserver thats fixes all the bugs and makes its 1:1.
 
-(this never was going to be public as its a test run and first gs i modify and not really a good gs (has bugs every where) but pongo threatened to leak it so why not make it public)
-
 ## Features
 
 Every thing that fortnite had at that time 1:1 proper
